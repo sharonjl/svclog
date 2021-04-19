@@ -1,5 +1,5 @@
-This package provides three types of logging for api services, from an old project.
-- Key=value logger
+This package provides three types of logging for api services. (From an old project)
+- Keyval logger
 - JSON logger
 - Nil logger
 
