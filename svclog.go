@@ -1,6 +1,8 @@
 package svclog
 
-import "sync"
+import (
+	"sync"
+)
 
 type Logger interface {
 	With(kv ...interface{}) Logger
@@ -14,14 +16,10 @@ var (
 )
 
 func With(kv ...interface{}) Logger {
-	mu.Lock()
-	defer mu.Unlock()
 	return defaultLogger.With(kv...)
 }
 
 func Print(message string, kv ...interface{}) {
-	mu.Lock()
-	defer mu.Unlock()
 	defaultLogger.Print(message, kv...)
 }
 
